@@ -28,7 +28,7 @@ pipeline {
     post {
         always {
             // Limpar recursos após a execução
-            sh 'deactivate || true && rm -rf ./venv'
+            sh 'rm -rf ./venv'
         }
     }
 }
