@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def index():
-    return "<head><title>DevSecOps</title></head><h1>Olá, mundo!</h1>"
+    return "<head><title>DevSecOps</title></head><h1>Olá, mundo!</h1><h2>Testando</h2>"
 
 def capitalize(s: str):
     return s.capitalize()
