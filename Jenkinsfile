@@ -31,6 +31,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
+                sh 'if [[ $(docker ps --format '{{.Names}}') == *"teste"* ]]; then docker kill teste; fi'
                 sh 'docker run -d -p 8888:8080 --name teste --rm hrchlhck/devsecops'
             }
         }
