@@ -23,6 +23,17 @@ pipeline {
                 sh '. venv/bin/activate && python -m unittest discover'
             }
         }
+
+        stage('Build') {
+            steps {
+                sh 'docker build -t hrchlhck/devsecops .'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'docker run -d -p 8888:8080 --name teste --rm hrchlhck/devsecops'
+            }
+        }
     }
 
     post {
